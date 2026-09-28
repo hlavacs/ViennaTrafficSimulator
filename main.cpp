@@ -138,6 +138,13 @@ public:
                 ImGui_ImplGlfw_Shutdown();
                 ImGui::DestroyContext();
             }
+            // Release the presentation objects while the window still exists. The NVIDIA Wayland
+            // driver dereferences the window's wl_surface when destroying the swapchain and surface,
+            // so letting the member destructors run after glfwTerminate() segfaults on exit.
+            framebuffers.clear();
+            swapchainImageViews.clear();
+            swapchain = nullptr;
+            surface = nullptr;
         }
         if (window != nullptr) {
             glfwDestroyWindow(window);

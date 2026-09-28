@@ -1,0 +1,25 @@
+# build output
+build/
+cmake-build-*/
+
+# python environment for extract_data.py
+.venv/
+__pycache__/
+
+# regenerable intermediates written by extract_data.py (the vulkan_*.bin files ARE committed)
+vienna_nodes.json
+vienna_edges.json
+vienna_nodes.geojson
+vienna_edges.geojson
+vienna_exit_nodes.geojson
+vienna_buildings_and_parking.geojson
+
+# osmnx response cache, if enabled
+cache/
+osmnx_cache/
+
+# simulation output
+results.json
+
+# not ours to publish
+*.pdf

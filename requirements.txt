@@ -1,0 +1,3 @@
+# Python dependencies for extract_data.py and tools/polygon_reconstruction/.
+# osmnx pulls in geopandas, shapely, networkx, pandas, numpy and requests.
+osmnx==2.1.1
